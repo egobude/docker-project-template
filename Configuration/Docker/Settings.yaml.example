@@ -1,0 +1,16 @@
+Neos:
+  Flow:
+    persistence:
+      backendOptions:
+        host: mariadb
+        dbname: neos
+        user: neos
+        password: neos
+        driver: pdo_mysql
+    mvc:
+      routes:
+        Neos.Flow: true
+    http:
+      baseUri: 'http://10.0.1.13:32831/'
+  Imagine:
+    driver: Imagick

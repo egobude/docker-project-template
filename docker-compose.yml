@@ -1,0 +1,32 @@
+version: "2"
+
+services:
+
+  php:
+    image: "zeroboh/php:latest"
+    links:
+      - "mariadb"
+      - "redis"
+    volumes:
+      - "/docker/NeosCMS:/data/"
+
+  nginx:
+    image: "zeroboh/nginx:1.11-alpine"
+    ports:
+      - "32831:32831"
+    links:
+      - "php"
+    volumes:
+      - "/docker/NeosCMS:/data/"
+      - "/docker/NeosCMS/Configuration/Docker/default.conf:/etc/nginx/conf.d/default.conf"
+
+  redis:
+     image: "zeroboh/redis:3.2-alpine"
+
+  mariadb:
+    image: "zeroboh/mariadb:10.1-debian-jessie"
+    environment:
+      MYSQL_ROOT_PASSWORD: "neos"
+      MYSQL_DATABASE: "neos"
+      MYSQL_USER: "neos"
+      MYSQL_PASSWORD: "neos"
