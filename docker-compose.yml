@@ -3,7 +3,7 @@ version: "2"
 services:
 
   php:
-    image: "zeroboh/php:latest"
+    image: "zeroboh/php:7.1-fpm-alpine"
     links:
       - "mariadb"
       - "redis"
