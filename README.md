@@ -1,4 +1,4 @@
-# Template for a docker based Neos CMS development setup
+# Docker based Neos CMS/Flow Framework development setup
 
 ## Requirements
 
