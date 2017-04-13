@@ -10,7 +10,7 @@
 
 ### Clone the repository
 
-    https://github.com/egobude/docker-neos-template.git
+    git clone https://github.com/egobude/docker-neos-template.git
     
 ### Install the project
 
@@ -25,6 +25,6 @@ After that your project should be up and running. You can reach your project und
 
 ## General tips
 
-### How to change the port
+### How to change the port?
 
 If you want to change the port you have to do this in the [docker-compose.yml](https://github.com/egobude/docker-neos-template/blob/master/docker-compose.yml) file and in the Nginx configuration under [Configuration/Docker/default.conf](https://github.com/egobude/docker-neos-template/blob/master/Configuration/Docker/default.conf)
