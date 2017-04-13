@@ -1,4 +1,4 @@
-# Docker based Neos CMS/Flow Framework development setup
+# Docker based development setup
 
 ## Requirements
 
