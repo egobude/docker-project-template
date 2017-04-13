@@ -1,5 +1,12 @@
 # Docker based development setup
 
+Template for a docker based Neos CMS/Flow Framework development setup.
+
+## Links
+
+ * [Neos CMS - Open Source Content Application Platform](https://www.neos.io/)
+ * [Flow Framework - PHP web application framework](https://flow.neos.io/)
+
 ## Requirements
 
 * docker (https://docs.docker.com/engine/installation)
