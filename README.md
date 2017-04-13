@@ -1,6 +1,6 @@
 # Docker based development setup
 
-Template for a docker based Neos CMS/Flow Framework development setup.
+Template for a docker based Neos CMS development setup.
 
 ## Links
 
