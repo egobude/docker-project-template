@@ -28,10 +28,10 @@ Template for a docker based Neos CMS development setup.
 
     docker-compose up -d
     
-After that your project should be up and running. You can reach your project under http://<YOUR_IP_ADRESS:32831
+You can reach your project under http://<YOUR_IP_ADRESS:1234
 
 ## General tips
 
 ### How to change the port?
 
-If you want to change the port you have to do this in the [docker-compose.yml](https://github.com/egobude/docker-neos-template/blob/master/docker-compose.yml) file and in the Nginx configuration under [Configuration/Docker/default.conf](https://github.com/egobude/docker-neos-template/blob/master/Configuration/Docker/default.conf)
+If you want a different port than 1234 you can edit the environment variable `NGINX_PORT` in the [.env](https://github.com/egobude/docker-neos-template/blob/master/.env) file. 
