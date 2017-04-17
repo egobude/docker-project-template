@@ -8,7 +8,7 @@ services:
       - "mariadb"
       - "redis"
     volumes:
-      - "/docker/NeosCMS:/data/"
+      - "./:/data/"
 
   nginx:
     image: "zeroboh/nginx:1.11-alpine"
@@ -17,8 +17,8 @@ services:
     links:
       - "php"
     volumes:
-      - "/docker/NeosCMS:/data/"
-      - "/docker/NeosCMS/Configuration/Docker/default.conf:/etc/nginx/conf.d/default.conf"
+      - "./:/data/"
+      - "./Docker/default.conf:/etc/nginx/conf.d/default.conf"
 
   redis:
      image: "zeroboh/redis:3.2-alpine"
