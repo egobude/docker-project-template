@@ -1,6 +1,6 @@
 {
-    "name": "neos/neos-base-distribution",
-    "description": "Neos Base Distribution",
+    "name": "egobude/docker-neos-template",
+    "description": "Docker based Neos CMS development setup",
     "license": "GPL-3.0+",
     "support": {
         "email": "hello@neos.io",
