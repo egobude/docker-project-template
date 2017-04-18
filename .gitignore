@@ -14,6 +14,8 @@
 /flow
 /flow.bat
 
+/Docker/mariadb
+
 # ignore the downloaded selenium server, config and the selenium
 # temporary directory (which starts with a quote, do not ask why...)
 /Tests/Selenium/settings.xml

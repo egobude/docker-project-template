@@ -1,4 +1,4 @@
-version: "2"
+version: "2.1"
 
 services:
 
@@ -30,6 +30,8 @@ services:
 
   mariadb:
     image: "zeroboh/mariadb:10.1-debian-jessie"
+    volumes:
+      - ./Docker/mariadb:/var/lib/mysql
     command: "--character-set-server=utf8 --collation-server=utf8_unicode_ci"
     environment:
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
