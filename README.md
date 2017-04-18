@@ -15,19 +15,22 @@ Template for a docker based Neos CMS development setup.
 
 ## How to start
 
-### Clone the repository
+### Install
 
-    git clone https://github.com/egobude/docker-neos-template.git
-    
-### Install the project
+    composer create-project egobude/docker-neos-template docker-neos
+   
+### Start your development stack
 
-    cd docker-neos-template
-    composer update
+    composer stack-up
     
-### Start up your docker-compose file
+### Stop your development stack
 
-    docker-compose up -d
-    
+	composer stack-down
+
+### Restart your development stack
+
+	composer stack-restart
+
 You can reach your project under http://<YOUR_IP_ADRESS:1234
 
 ## General tips
