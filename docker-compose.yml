@@ -3,7 +3,7 @@ version: "2.1"
 services:
 
   php:
-    image: "zeroboh/php:7.1-fpm-alpine"
+    image: ${IMAGE_PHP}
     links:
       - "mariadb"
       - "redis"
@@ -13,7 +13,7 @@ services:
       - "./:/data/"
 
   nginx:
-    image: "zeroboh/nginx:1.11-alpine"
+    image: ${IMAGE_NGINX}
     ports:
       - "${NGINX_PORT}:${NGINX_PORT}"
     links:
@@ -26,10 +26,10 @@ services:
       - "./:/data/"
 
   redis:
-     image: "zeroboh/redis:3.2-alpine"
+     image: ${IMAGE_REDIS}
 
   mariadb:
-    image: "zeroboh/mariadb:10.1-debian-jessie"
+    image: ${IMAGE_MARIADB}
     volumes:
       - "./Docker/mariadb:/var/lib/mysql"
     command: "--character-set-server=utf8 --collation-server=utf8_unicode_ci"
