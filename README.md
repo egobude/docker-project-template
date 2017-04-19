@@ -21,15 +21,19 @@ Template for a docker based Neos CMS development setup.
    
 ### Start your development stack
 
-    composer stack-up
+    docker-compose up -d
     
 ### Stop your development stack
 
-	composer stack-down
+	docker-compose down -v
 
 ### Restart your development stack
 
-	composer stack-restart
+	docker-compose restart
+
+### Execute a command in a container (for example clear the flow cache in the php container)
+
+	docker-compose exec php ./flow flow:cache:flush --force
 
 You can reach your project under http://<YOUR_IP_ADRESS:1234
 
