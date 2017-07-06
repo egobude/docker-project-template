@@ -62,4 +62,4 @@ If you want a different port than 1234 you can edit the environment variable `NG
 
 ### How to change the document root? 
 
-To change the document root just edit the configuration file located under `Docker/nginx/default.conf.template`
+To change the document root just edit the environment variable `NGINX_DOCUMENT_ROOT` in the [.env](https://github.com/egobude/docker-neos-template/blob/master/.env) file.

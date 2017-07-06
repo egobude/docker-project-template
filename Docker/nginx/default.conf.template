@@ -1,7 +1,7 @@
 server {
     listen ${NGINX_PORT};
     server_name localhost;
-    root /data/Web;
+    root ${NGINX_DOCUMENT_ROOT};
     index index.php;
 
     client_body_temp_path /tmp/nginx;

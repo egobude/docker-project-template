@@ -10,7 +10,7 @@ services:
     environment:
       FLOW_CONTEXT: "${FLOW_CONTEXT}"
     volumes:
-      - "./Data:/data:cached"
+      - "./Data:/data"
 
   nginx:
     build: ./Docker/nginx
@@ -21,9 +21,10 @@ services:
     environment:
       FLOW_CONTEXT: "${FLOW_CONTEXT}"
       NGINX_PORT: "${NGINX_PORT}"
+      NGINX_DOCUMENT_ROOT: "${NGINX_DOCUMENT_ROOT}"
     command: /bin/sh -c "/run_nginx.sh"
-    volumes:
-      - "./Data:/data"
+    volumes_from:
+      - php
 
   redis:
      build: ./Docker/redis
