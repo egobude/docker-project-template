@@ -1,48 +1,56 @@
 # Docker based development setup
 
-Template for a docker based Neos/Flow development.
+Template for a docker based development setup.
 
-## Links
-
- * [Neos CMS - Open Source Content Application Platform](https://www.neos.io/)
- * [Flow Framework - PHP web application framework](https://flow.neos.io/)
-
-## Requirements
+## Requirements/Links
 
  * docker (https://docs.docker.com/engine/installation)
  * docker-compose (https://docs.docker.com/compose)
  * composer (https://getcomposer.org)
 
-## Development Stack
+## Development stack
 
 |Image|Version|OS|
 |---|---|---|
-|[Nginx](https://hub.docker.com/r/zeroboh/nginx/)|1.11|Alpine| 
-|[PHP-FPM](https://hub.docker.com/r/zeroboh/php/)|7.1|Alpine| 
+|[Nginx](https://hub.docker.com/r/zeroboh/nginx/)|1.11|Alpine|
+|[PHP-FPM](https://hub.docker.com/r/zeroboh/php/)|7.1|Alpine|
 |[Redis](https://hub.docker.com/r/zeroboh/redis/)|3.2|Alpine|
-|[MariaDB](https://hub.docker.com/r/zeroboh/mariadb/)|10.1|Debian Jessie | 
+|[MariaDB](https://hub.docker.com/r/zeroboh/mariadb/)|10.1|Debian Jessie |
 
 ## Usage
 
 ### Clone the repository
 
-    $ git clone https://github.com/egobude/docker-neos-template.git  
+    $ git clone https://github.com/egobude/docker-neos-template.git
     $ cd docker-neos-template
     
-### Build the containers    
+### Build the containers
     
     $ docker-compose build
 
-### Install your project (Neos or Flow) 
+### Install your project
+
+#### Install a Neos base distribution
 
     $ composer create-project neos/neos-base-distribution Data 
+
+#### Install a Flow base distribution
+
     $ composer create-project neos/flow-base-distribution Data
 
-### Start up your docker-compose file    
+### Start your development stack
 
     $ docker-compose up -d   
     
 You can reach your project under http://<YOUR_IP_ADRESS:1234
+
+### Stop and remove the containers
+
+    $ docker-compose down
+
+### If changes have been made to the setup, rebuild the containers
+
+    $ docker-compose up -d --build --force-recreate
 
 ## Tips
 
@@ -50,7 +58,7 @@ You can reach your project under http://<YOUR_IP_ADRESS:1234
 
 ### How to change the port?
 
-If you want a different port than 1234 you can edit the environment variable `NGINX_PORT` in the [.env](https://github.com/egobude/docker-neos-template/blob/master/.env) file. 
+If you want a different port than 1234 you can edit the environment variable `NGINX_PORT` in the [.env](https://github.com/egobude/docker-neos-template/blob/master/.env) file.
 
 ### How to change the document root? 
 
