@@ -3,17 +3,17 @@ version: "2"
 services:
 
   php:
-    image: "zeroboh/php:7.1-fpm-alpine"
+    build: ./Docker/php-fpm
     links:
       - "mariadb"
       - "redis"
     environment:
-      FLOW_CONTEXT: "${FLOW_CONTEXT}"  
+      FLOW_CONTEXT: "${FLOW_CONTEXT}"
     volumes:
-      - "./:/data/"
+      - "./Data:/data:cached"
 
   nginx:
-    image: "zeroboh/nginx:1.11-alpine"
+    build: ./Docker/nginx
     ports:
       - "${NGINX_PORT}:${NGINX_PORT}"
     links:
@@ -21,18 +21,20 @@ services:
     environment:
       FLOW_CONTEXT: "${FLOW_CONTEXT}"
       NGINX_PORT: "${NGINX_PORT}"
-    command: /bin/sh -c "/data/Docker/run_nginx.sh"
+    command: /bin/sh -c "/run_nginx.sh"
     volumes:
-      - "./:/data/"
+      - "./Data:/data"
 
   redis:
-     image: "zeroboh/redis:3.2-alpine"
+     build: ./Docker/redis
 
   mariadb:
-    image: "zeroboh/mariadb:10.1-debian-jessie"
+    build: ./Docker/mariadb
     command: "--character-set-server=utf8 --collation-server=utf8_unicode_ci"
     environment:
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
       MYSQL_DATABASE: "${MYSQL_DATABASE}"
       MYSQL_USER: "${MYSQL_USER}"
       MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+    volumes:
+      - "./MariaDB:/var/lib/mysql"
