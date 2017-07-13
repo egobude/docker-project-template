@@ -54,7 +54,7 @@ You can reach your project under http://<YOUR_IP_ADRESS:1234
 
 ## Tips
 
-> Whenever you make changes to the container, you have to rebuild it!
+> Whenever you make changes to the files located under `/Docker` you have to rebuild the images. Otherwise the changes have no effect!
 
 ### How to execute a custom shell script on start up? 
 
