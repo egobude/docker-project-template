@@ -56,6 +56,10 @@ You can reach your project under http://<YOUR_IP_ADRESS:1234
 
 > Whenever you make changes to the container, you have to rebuild it!
 
+### How to execute a custom shell script on start up? 
+
+To execute a custom shell script on start up place one or more *.sh files into the /docker-entrypoints folder. This feature is available for the php-fpm and nginx image. The files are loaded alphabetically.
+
 ### How to change the port?
 
 If you want a different port than 1234 you can edit the environment variable `NGINX_PORT` in the [.env](https://github.com/egobude/docker-neos-template/blob/master/.env) file.

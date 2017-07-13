@@ -22,7 +22,6 @@ services:
       FLOW_CONTEXT: "${FLOW_CONTEXT}"
       NGINX_PORT: "${NGINX_PORT}"
       NGINX_DOCUMENT_ROOT: "${NGINX_DOCUMENT_ROOT}"
-    command: /bin/sh -c "/run_nginx.sh"
     volumes_from:
       - php
 

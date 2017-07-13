@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+# execute init scripts
+for f in /docker-entrypoints/*; do
+    case "$f" in
+        *.sh)     echo "$0: running $f"; . "$f" ;;
+        *)        echo "$0: ignoring $f" ;;
+    esac
+    echo
+done
