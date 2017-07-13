@@ -23,7 +23,13 @@ Template for a docker based development setup.
 
     $ git clone https://github.com/egobude/docker-neos-template.git
     $ cd docker-neos-template
-    
+
+### Create a .env file
+
+Create a .env file from .env.dist and edit it with your own config
+
+    $ cp .env.dist .env
+
 ### Build the containers
     
     $ docker-compose build
