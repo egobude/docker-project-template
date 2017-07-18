@@ -5,11 +5,11 @@ services:
   php:
     build: ./Docker/php-fpm
     image: ${PROJECT_IDENTIFIER}/php-fpm:7.1-fpm-alpine
-    links:
-      - "mariadb"
-      - "redis"
     environment:
       FLOW_CONTEXT: "${FLOW_CONTEXT}"
+    depends_on:
+      - "redis"
+      - "mariadb"  
     volumes:
       - "./Data:/data"
 
@@ -18,14 +18,14 @@ services:
     image: ${PROJECT_IDENTIFIER}/nginx:1.11-alpine
     ports:
       - "${NGINX_PORT}:${NGINX_PORT}"
-    links:
-      - "php"
     environment:
       FLOW_CONTEXT: "${FLOW_CONTEXT}"
       NGINX_PORT: "${NGINX_PORT}"
       NGINX_DOCUMENT_ROOT: "${NGINX_DOCUMENT_ROOT}"
+    depends_on:
+      - "php"
     volumes_from:
-      - php
+      - "php"
 
   redis:
      build: ./Docker/redis
