@@ -21,8 +21,8 @@ Template for a docker based development setup.
 
 ### Clone the repository
 
-    $ git clone https://github.com/egobude/docker-neos-template.git
-    $ cd docker-neos-template
+    $ git clone https://github.com/egobude/docker-project-template.git
+    $ cd docker-project-template
 
 ### Create a .env file
 
@@ -68,8 +68,8 @@ To execute a custom shell script on start up place one or more *.sh files into t
 
 ### How to change the port?
 
-If you want a different port than 1234 you can edit the environment variable `NGINX_PORT` in the [.env](https://github.com/egobude/docker-neos-template/blob/master/.env) file.
+If you want a different port than 1234 you can edit the environment variable `NGINX_PORT` in the [.env](https://github.com/egobude/docker-project-template/blob/master/.env) file.
 
 ### How to change the document root? 
 
-To change the document root just edit the environment variable `NGINX_DOCUMENT_ROOT` in the [.env](https://github.com/egobude/docker-neos-template/blob/master/.env) file.
+To change the document root just edit the environment variable `NGINX_DOCUMENT_ROOT` in the [.env](https://github.com/egobude/docker-project-template/blob/master/.env) file.
