@@ -1,6 +1,8 @@
 FROM zeroboh/nginx:1.11-alpine
 
-COPY ./default.conf.template /default.conf.template
+ARG PROJECT_TYPE
+
+COPY ./${PROJECT_TYPE}.conf.template /default.conf.template
 COPY ./docker-entrypoint /docker-entrypoint
 COPY ./docker-entrypoints /docker-entrypoints
 
